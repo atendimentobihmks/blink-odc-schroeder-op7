@@ -33,7 +33,7 @@ body {
 }
 
 .brand-logo {
-  width: 215px;
+  width: 240px;
   max-width: 85vw;
   height: auto;
   display: block;
@@ -109,6 +109,7 @@ body::before {
   background-position: center 25%;
   background-repeat: no-repeat;
   pointer-events: none;
+  filter: brightness(0.94);
 }
 
 .bg-overlay-fixed {
