@@ -60,24 +60,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 28px 14px 52px;
+  padding: 24px 14px 48px;
   position: relative;
   overflow-x: hidden;
-  background-color: #042422;
-  background-image: url('assets/images/fundo-odc.webp'), url('assets/images/fundo-odc.jpeg');
-  background-size: cover;
-  background-position: center top;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-color: #043633;
 }
 
 /* Fixed Background Gradient for atmospheric luxury */
 .bg-overlay-fixed {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 50% 10%, rgba(0, 96, 91, 0.1) 0%, rgba(2, 20, 19, 0.5) 100%);
+  background-image: url('assets/images/fundo-odc.webp'), url('assets/images/fundo-odc.jpeg');
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
   pointer-events: none;
   z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .bg-overlay-fixed {
+    background-size: cover;
+    background-position: center center;
+  }
 }
 
 /* Main Container: Mobile First Bio-Link Width */
@@ -894,15 +899,14 @@ body {
 }
 
 .modal-body {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  line-height: 1.55;
+  min-height: 100dvh;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-height: 60vh;
-  overflow-y: auto;
-  padding-right: 4px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px 14px 48px;
+  position: relative;
+  overflow-x: hidden;
+  background-color: #043633;
 }
 
 .modal-body h3 {
