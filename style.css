@@ -1,3 +1,44 @@
+body {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 38px 14px 56px;
+  position: relative;
+  overflow-x: hidden;
+  background-color: #042422;
+}
+
+/* Header & Profile */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.45));
+  transition: transform var(--duration-normal) var(--ease-spring);
+}
+
+.logo-container:hover {
+  transform: scale(1.03);
+}
+
+.brand-logo {
+  width: 215px;
+  max-width: 85vw;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
 :root {
   /* OdontoCompany Brand Palette */
   --odc-emerald-dark: #00605B;
@@ -55,16 +96,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  min-height: 100dvh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 28px 14px 52px;
-  position: relative;
-  overflow-x: hidden;
-  background-color: #042422;
-}
+
 
 /* Seamless Full-Cover Background Layer */
 body::before {
@@ -110,13 +142,7 @@ body::before {
 }
 
 /* Header & Profile */
-.profile-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 24px;
-}
+
 
 
 
@@ -128,32 +154,11 @@ body::before {
 }
 
 /* Floating Logo Card */
-.logo-bezel-outer {
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  padding: 6px;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow: var(--shadow-md);
-  margin-bottom: 16px;
-}
 
-.logo-bezel-inner {
-  background: #FFFFFF;
-  padding: 12px 28px;
-  border-radius: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.brand-logo {
-  max-width: 175px;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
+
+
+
 
 .unit-title {
   font-family: 'Outfit', sans-serif;
@@ -834,17 +839,7 @@ body::before {
   color: var(--text-muted);
 }
 
-.modal-body {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  line-height: 1.55;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-height: 60vh;
-  overflow-y: auto;
-  padding-right: 4px;
-}
+.modal-
 
 .modal-body h3 {
   font-size: 0.85rem;
