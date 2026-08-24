@@ -11,10 +11,8 @@
   /* Neutral System */
   --bg-card: #FFFFFF;
   --bg-card-subtle: #F8FAFC;
-  --bg-bezel: rgba(255, 255, 255, 0.15);
   --border-light: rgba(15, 23, 42, 0.08);
   --border-bezel: rgba(255, 255, 255, 0.25);
-  --border-focus: rgba(8, 112, 106, 0.35);
   
   /* Typography Colors */
   --text-main: #0F172A;
@@ -66,7 +64,7 @@ body {
   background-color: #042422;
 }
 
-/* Full-Screen Seamless Fixed Background with 0.89 Brightness */
+/* Full-Screen Seamless Fixed Background */
 body::before {
   content: '';
   position: fixed;
@@ -80,10 +78,6 @@ body::before {
   pointer-events: none;
 }
 
-.bg-overlay-fixed {
-  display: none;
-}
-
 /* Main Container: Mobile First Bio-Link Width */
 .page-container {
   width: 100%;
@@ -93,21 +87,14 @@ body::before {
   z-index: 1;
 }
 
-/* Floating Elements - Zero white container card */
-.app-card-outer {
+/* Floating Elements Container */
+.app-card-outer, .app-card-inner {
   background: transparent !important;
   border: none !important;
   padding: 0 !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-}
-
-.app-card-inner {
-  background: transparent !important;
-  border: none !important;
-  padding: 0 !important;
-  position: relative;
 }
 
 /* Header & Profile */
@@ -124,13 +111,12 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
-  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.45));
+  margin-bottom: 16px;
   transition: transform var(--duration-normal) var(--ease-spring);
 }
 
 .logo-container:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
 .brand-logo {
@@ -138,6 +124,7 @@ body::before {
   height: 96px;
   max-width: 96px;
   display: block;
+  object-fit: contain;
   filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.45));
 }
 
@@ -262,14 +249,7 @@ body::before {
 }
 
 .btn-card:hover .btn-icon-wrapper {
-  width: 44px;
-  height: 44px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: transform var(--duration-normal) var(--ease-spring);
+  transform: scale(1.08);
 }
 
 .btn-icon-wrapper svg {
@@ -339,7 +319,7 @@ body::before {
   color: var(--odc-emerald-dark);
 }
 
-/* 2. WhatsApp (Hero VIP Action) */
+/* 2. WhatsApp (Hero Action) */
 .btn-card-whatsapp {
   background: linear-gradient(135deg, #109448 0%, #1ea952 50%, #25D366 100%);
   border: 1px solid rgba(255, 255, 255, 0.35);
@@ -361,9 +341,24 @@ body::before {
   color: #FFFFFF;
 }
 
+.btn-header-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-
-
+.btn-tag-live {
+  background: #FFFFFF;
+  color: #0E7538;
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  display: inline-flex;
+  align-items: center;
+}
 
 .btn-trailing-whatsapp {
   background: rgba(255, 255, 255, 0.25);
@@ -464,8 +459,6 @@ body::before {
 .treatment-card:hover .treatment-img {
   transform: scale(1.04);
 }
-
-
 
 .treatment-content {
   padding: 16px;
@@ -591,7 +584,7 @@ body::before {
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
 }
 
-/* 10. Hours Pill Card */
+/* 10. Hours Card */
 .hours-section {
   margin-top: 14px;
 }
@@ -746,17 +739,35 @@ body::before {
   color: rgba(255, 255, 255, 0.8);
 }
 
-
-
-
-
-.bmk-link:hover {
-  opacity: 1;
+/* OP7 Franchising Signature */
+.op7-signature {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.op7-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  opacity: 0.88;
+  transition: all var(--duration-normal) var(--ease-spring);
+}
 
+.op7-link:hover {
+  opacity: 1;
+  transform: translateY(-2px) scale(1.04);
+}
 
-
+.op7-logo-img {
+  height: 52px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45));
+}
 
 /* Modals */
 .modal-dialog {
@@ -847,54 +858,4 @@ body::before {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-}
-
-
-.btn-header-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.btn-tag-live {
-  background: #FFFFFF;
-  color: #0E7538;
-  font-size: 0.62rem;
-  font-weight: 800;
-  padding: 2px 7px;
-  border-radius: 4px;
-  letter-spacing: 0.05em;
-  line-height: 1.1;
-  display: inline-flex;
-  align-items: center;
-}
-
-/* OP7 Franchising Signature */
-.op7-signature {
-  margin-top: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.op7-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  opacity: 0.88;
-  transition: all var(--duration-normal) var(--ease-spring);
-}
-
-.op7-link:hover {
-  opacity: 1;
-  transform: translateY(-2px) scale(1.04);
-}
-
-.op7-logo-img {
-  height: 52px;
-  width: auto;
-  max-width: 140px;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45));
 }
