@@ -64,7 +64,7 @@ body {
   position: relative;
   overflow-x: hidden;
   background-color: #042422;
-  background-image: url('assets/images/fundo-odc.webp'), url('assets/images/fundo-odc.png');
+  background-image: url('assets/images/fundo-odc.webp'), url('assets/images/fundo-odc.jpeg');
   background-size: cover;
   background-position: center top;
   background-attachment: fixed;
