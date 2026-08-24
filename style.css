@@ -353,21 +353,9 @@ body::before {
   color: #FFFFFF;
 }
 
-.btn-header-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
 
-.btn-tag-live {
-  background: #FFFFFF;
-  color: #0E7538;
-  font-size: 0.6rem;
-  font-weight: 800;
-  padding: 2px 7px;
-  border-radius: 4px;
-  letter-spacing: 0.05em;
-}
+
+
 
 .btn-trailing-whatsapp {
   background: rgba(255, 255, 255, 0.25);
@@ -876,4 +864,24 @@ body::before {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+
+.btn-header-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-tag-live {
+  background: #FFFFFF;
+  color: #0E7538;
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  display: inline-flex;
+  align-items: center;
 }
