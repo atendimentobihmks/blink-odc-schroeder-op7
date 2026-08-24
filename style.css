@@ -137,7 +137,6 @@ body::before {
   width: 96px;
   height: 96px;
   max-width: 96px;
-  border-radius: 50%;
   object-fit: contain;
   display: block;
 }
