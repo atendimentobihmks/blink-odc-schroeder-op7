@@ -8,10 +8,10 @@
   --odc-green-whatsapp: #25D366;
   --odc-whatsapp-dark: #128C7E;
   
-  /* Neutral Luxury Light System */
-  --bg-app: #F8FAFC;
+  /* Neutral Luxury System */
+  --bg-app: #083331;
   --bg-card: #FFFFFF;
-  --bg-card-subtle: #F1F5F9;
+  --bg-card-subtle: #F8FAFC;
   --bg-bezel: rgba(0, 96, 91, 0.04);
   --border-light: rgba(15, 23, 42, 0.08);
   --border-bezel: rgba(0, 96, 91, 0.12);
@@ -26,8 +26,8 @@
   /* Shadows & Depth */
   --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.02);
   --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(15, 23, 42, 0.03);
-  --shadow-lg: 0 20px 40px -10px rgba(0, 96, 91, 0.10), 0 8px 16px -4px rgba(15, 23, 42, 0.04);
-  --shadow-glow-wa: 0 10px 28px -4px rgba(37, 211, 102, 0.40);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.28), 0 10px 20px -5px rgba(0, 0, 0, 0.15);
+  --shadow-glow-wa: 0 10px 28px -4px rgba(37, 211, 102, 0.45);
   
   /* Geometry */
   --radius-outer: 32px;
@@ -51,7 +51,7 @@
 
 html {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: #EEF2F6;
+  background-color: #042422;
   color: var(--text-main);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -66,57 +66,21 @@ body {
   padding: 16px 12px 32px;
   position: relative;
   overflow-x: hidden;
-  background: #EEF2F6;
+  background-color: #042422;
+  background-image: url('assets/images/fundo-odc.webp'), url('assets/images/fundo-odc.png');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
-/* Ambient Animated Mesh Background */
-.ambient-mesh {
+/* Fixed Background Overlay for extra depth */
+.bg-overlay-fixed {
   position: fixed;
   inset: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(0, 96, 91, 0.2) 0%, rgba(4, 36, 34, 0.65) 100%);
   pointer-events: none;
   z-index: 0;
-  overflow: hidden;
-}
-
-.mesh-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.45;
-  animation: floatOrb 18s ease-in-out infinite alternate;
-}
-
-.mesh-orb-1 {
-  width: 380px;
-  height: 380px;
-  top: -80px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: radial-gradient(circle, rgba(0, 96, 91, 0.18) 0%, rgba(34, 197, 94, 0.08) 70%, transparent 100%);
-}
-
-.mesh-orb-2 {
-  width: 320px;
-  height: 320px;
-  bottom: 10%;
-  left: -50px;
-  background: radial-gradient(circle, rgba(8, 112, 106, 0.15) 0%, transparent 80%);
-  animation-delay: -5s;
-}
-
-.mesh-orb-3 {
-  width: 300px;
-  height: 300px;
-  top: 40%;
-  right: -60px;
-  background: radial-gradient(circle, rgba(37, 211, 102, 0.12) 0%, transparent 80%);
-  animation-delay: -10s;
-}
-
-@keyframes floatOrb {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(20px, -30px) scale(1.08); }
-  100% { transform: translate(-20px, 20px) scale(0.95); }
 }
 
 /* Main Container: Mobile First Bio-Link Width */
@@ -130,13 +94,13 @@ body {
 
 /* Double-Bezel Outer Shell */
 .app-card-outer {
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
   padding: 8px;
   border-radius: var(--radius-outer);
-  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(0, 96, 91, 0.05);
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255, 255, 255, 0.4);
 }
 
 /* Double-Bezel Inner Core */
