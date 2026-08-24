@@ -1,3 +1,31 @@
+body {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 28px 14px 52px;
+  position: relative;
+  overflow-x: hidden;
+  background-color: #043633;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: url('assets/images/fundo-odc.webp'), url('assets/images/fundo-odc.jpeg');
+  background-size: cover;
+  background-position: 78% center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  body::before {
+    background-position: 75% center;
+  }
+}
 :root {
   /* OdontoCompany Brand Palette */
   --odc-emerald-dark: #00605B;
@@ -56,52 +84,11 @@ html {
 }
 
 /* Body with Zero-Zoom Natural Background Scaling */
-body {
-  min-height: 100dvh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 28px 14px 52px;
-  position: relative;
-  overflow-x: hidden;
-  background-color: #043633;
-  background-image: url('assets/images/fundo-odc.webp'), url('assets/images/fundo-odc.jpeg');
-  background-size: 195% auto;
-  background-position: 82% 20%;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-}
 
-@media (min-width: 768px) {
-  body {
-    background-size: 155% auto;
-    background-position: 78% 18%;
-  }
-}
 
-@media (min-width: 768px) {
-  body {
-  min-height: 100dvh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 28px 14px 52px;
-  position: relative;
-  overflow-x: hidden;
-  background-color: #043633;
-  background-image: url('assets/images/fundo-odc.webp'), url('assets/images/fundo-odc.jpeg');
-  background-size: 195% auto;
-  background-position: 82% 20%;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-}
 
-@media (min-width: 768px) {
-  body {
-    background-size: 155% auto;
-    background-position: 78% 18%;
-  }
-}
+
+
 }
 
 .bg-overlay-fixed {
@@ -921,52 +908,11 @@ body {
   color: var(--text-muted);
 }
 
-.modal-body {
-  min-height: 100dvh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 28px 14px 52px;
-  position: relative;
-  overflow-x: hidden;
-  background-color: #043633;
-  background-image: url('assets/images/fundo-odc.webp'), url('assets/images/fundo-odc.jpeg');
-  background-size: 195% auto;
-  background-position: 82% 20%;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-}
+.modal-
 
-@media (min-width: 768px) {
-  body {
-    background-size: 155% auto;
-    background-position: 78% 18%;
-  }
-}
 
-@media (min-width: 768px) {
-  body {
-  min-height: 100dvh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 28px 14px 52px;
-  position: relative;
-  overflow-x: hidden;
-  background-color: #043633;
-  background-image: url('assets/images/fundo-odc.webp'), url('assets/images/fundo-odc.jpeg');
-  background-size: 195% auto;
-  background-position: 82% 20%;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-}
 
-@media (min-width: 768px) {
-  body {
-    background-size: 155% auto;
-    background-position: 78% 18%;
-  }
-}
+
 }
 
 .modal-body h3 {
