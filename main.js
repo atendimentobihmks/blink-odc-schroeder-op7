@@ -24,11 +24,9 @@ function initCarousel() {
 
   let currentIndex = 0;
   const totalSlides = slides.length;
-  let autoplayTimer = null;
   let isTouching = false;
   let startX = 0;
-  let currentTranslate = 0;
-  let prevTranslate = 0;
+  let startY = 0;
 
   function updateSlide(index) {
     if (index < 0) index = totalSlides - 1;
@@ -54,61 +52,44 @@ function initCarousel() {
     updateSlide(currentIndex - 1);
   }
 
-  if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); resetAutoplay(); });
-  if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetAutoplay(); });
+  if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+  if (prevBtn) prevBtn.addEventListener('click', prevSlide);
 
   dots.forEach(dot => {
     dot.addEventListener('click', (e) => {
       const idx = parseInt(e.target.dataset.dotIndex, 10);
       updateSlide(idx);
-      resetAutoplay();
     });
   });
 
-  // Touch & Drag Handling
+  // Touch Swipe Handling for Mobile Devices
   track.addEventListener('touchstart', (e) => {
     isTouching = true;
     startX = e.touches[0].clientX;
-    stopAutoplay();
+    startY = e.touches[0].clientY;
   }, { passive: true });
 
   track.addEventListener('touchmove', (e) => {
     if (!isTouching) return;
     const currentX = e.touches[0].clientX;
-    const diff = currentX - startX;
-    if (Math.abs(diff) > 40) {
-      if (diff > 0) prevSlide();
-      else nextSlide();
+    const currentY = e.touches[0].clientY;
+    const diffX = currentX - startX;
+    const diffY = currentY - startY;
+
+    // Check if horizontal swipe is dominant over vertical scroll
+    if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 35) {
+      if (diffX > 0) {
+        prevSlide();
+      } else {
+        nextSlide();
+      }
       isTouching = false;
     }
   }, { passive: true });
 
   track.addEventListener('touchend', () => {
     isTouching = false;
-    startAutoplay();
   });
-
-  function startAutoplay() {
-    stopAutoplay();
-    autoplayTimer = setInterval(nextSlide, 5000);
-  }
-
-  function stopAutoplay() {
-    if (autoplayTimer) clearInterval(autoplayTimer);
-  }
-
-  function resetAutoplay() {
-    stopAutoplay();
-    startAutoplay();
-  }
-
-  const container = document.getElementById('treatments-carousel');
-  if (container) {
-    container.addEventListener('mouseenter', stopAutoplay);
-    container.addEventListener('mouseleave', startAutoplay);
-  }
-
-  startAutoplay();
 }
 
 /* ==========================================================================
