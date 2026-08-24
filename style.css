@@ -1,26 +1,3 @@
-body {
-  min-height: 100dvh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 28px 14px 52px;
-  position: relative;
-  overflow-x: hidden;
-  background-color: #042422;
-}
-
-/* Full-Screen Seamless Fixed Background with Reduced Zoom */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  background-image: url('assets/images/fundo-odc.webp'), url('assets/images/fundo-odc.png');
-  background-size: auto 100vh;
-  background-position: center top;
-  background-repeat: no-repeat;
-  pointer-events: none;
-}
 :root {
   /* OdontoCompany Brand Palette */
   --odc-emerald-dark: #00605B;
@@ -78,10 +55,29 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 28px 14px 52px;
+  position: relative;
+  overflow-x: hidden;
+  background-color: #042422;
+}
 
-
-/* Full-Screen Seamless Fixed Background */
-
+/* Seamless Full-Cover Background Layer */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: url('assets/images/fundo-odc.webp'), url('assets/images/fundo-odc.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
 
 .bg-overlay-fixed {
   display: none;
@@ -900,7 +896,17 @@ html {
   color: var(--text-muted);
 }
 
-.modal-
+.modal-body {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 4px;
+}
 
 .modal-body h3 {
   font-size: 0.85rem;
