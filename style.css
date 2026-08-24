@@ -74,7 +74,7 @@ body::before {
   z-index: 0;
   background-image: url('assets/images/fundo-odc.webp'), url('assets/images/fundo-odc.png');
   background-size: cover;
-  background-position: center center;
+  background-position: center 25%;
   background-repeat: no-repeat;
   pointer-events: none;
 }
