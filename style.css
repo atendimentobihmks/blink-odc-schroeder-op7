@@ -134,9 +134,9 @@ body::before {
 }
 
 .brand-logo {
-  width: 265px;
-  max-width: 90vw;
-  height: auto;
+  width: 96px;
+  height: 96px;
+  max-width: 96px;
   display: block;
   object-fit: contain;
 }
