@@ -137,8 +137,9 @@ body::before {
   width: 96px;
   height: 96px;
   max-width: 96px;
-  display: block;
+  border-radius: 50%;
   object-fit: contain;
+  display: block;
 }
 
 .unit-title {
