@@ -1,7 +1,7 @@
 # Segurança, Privacidade e Conformidade LGPD
 
 ## Unidade: OdontoCompany Schroeder
-* **Responsável Técnico:** Corpo Clínico OdontoCompany (CRO-SC 022527)
+* **Responsável Técnico:** Dra. Ana Paula Enciso do Nascimento (CRO-SC 22527)
 * **Endereço:** Rua Marechal Castelo Branco, 3246 (SL 03), Centro, Schroeder/SC - CEP 89275-000
 * **Data de Implementação:** Agosto de 2026
 

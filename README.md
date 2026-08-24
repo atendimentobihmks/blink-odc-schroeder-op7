@@ -3,8 +3,8 @@
 Canal oficial de multi-links e apresentação digital da unidade **OdontoCompany Schroeder**.
 
 ## 📋 Informações da Unidade
-* **Responsável Técnico:** Corpo Clínico OdontoCompany
-* **CRO:** CRO-SC 022527
+* **Responsável Técnico:** Dra. Ana Paula Enciso do Nascimento
+* **CRO:** CRO-SC 22527
 * **Telefone / WhatsApp:** (47) 9164-3330
 * **Endereço:** Rua Marechal Castelo Branco, 3246 (SL 03), Centro, Schroeder/SC - CEP 89275-000
 * **Horários:** Segunda a Sexta: 08h às 19h | Sábado: 08h às 13h
