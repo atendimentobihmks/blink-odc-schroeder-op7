@@ -66,10 +66,17 @@ body {
   overflow-x: hidden;
   background-color: #043633;
   background-image: url('assets/images/fundo-odc.webp'), url('assets/images/fundo-odc.jpeg');
-  background-size: 100% auto;
-  background-position: center top;
+  background-size: 185% auto;
+  background-position: 72% top;
   background-repeat: no-repeat;
   background-attachment: scroll;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-size: 145% auto;
+    background-position: 68% top;
+  }
 }
 
 .bg-overlay-fixed {
@@ -890,15 +897,26 @@ body {
 }
 
 .modal-body {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  line-height: 1.55;
+  min-height: 100dvh;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-height: 60vh;
-  overflow-y: auto;
-  padding-right: 4px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 28px 14px 52px;
+  position: relative;
+  overflow-x: hidden;
+  background-color: #043633;
+  background-image: url('assets/images/fundo-odc.webp'), url('assets/images/fundo-odc.jpeg');
+  background-size: 185% auto;
+  background-position: 72% top;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-size: 145% auto;
+    background-position: 68% top;
+  }
 }
 
 .modal-body h3 {
