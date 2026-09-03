@@ -99,46 +99,62 @@ function initLiveHours() {
   const statusEl = document.getElementById('live-hours-status');
   if (!statusEl) return;
 
-  const now = new Date();
-  const day = now.getDay(); // 0 = Domingo, 1-5 = Seg a Sex, 6 = Sábado
-  const hour = now.getHours();
-  const minutes = now.getMinutes();
-  const timeVal = hour + minutes / 60;
+  function updateStatus() {
+    const now = new Date();
+    const day = now.getDay(); // 0 = Domingo, 1-5 = Seg a Sex, 6 = Sábado
+    const hour = now.getHours();
+    const minutes = now.getMinutes();
+    const currentMinutes = hour * 60 + minutes;
 
-  let isOpen = false;
-  let statusText = "Fechado agora • Abre às 08:00";
+    let isOpen = false;
+    let statusText = "Fechado agora • Abre às 08:30";
 
-  if (day >= 1 && day <= 5) {
-    // Segunda a Sexta: 08h às 19h
-    if (timeVal >= 8 && timeVal < 19) {
-      isOpen = true;
-      statusText = "Aberto agora • Atendimento até 19:00";
-    } else if (timeVal < 8) {
-      statusText = "Fechado agora • Abre hoje às 08:00";
+    if (day >= 1 && day <= 5) {
+      // Segunda a Sexta: 08:30 às 12:00 e 13:30 às 19:20
+      // 08:30 = 510 min, 12:00 = 720 min, 13:30 = 810 min, 19:20 = 1160 min
+      if (currentMinutes < 510) {
+        statusText = "Fechado agora • Abre hoje às 08:30";
+      } else if (currentMinutes >= 510 && currentMinutes < 720) {
+        isOpen = true;
+        statusText = "Aberto agora • Atendimento até 12:00";
+      } else if (currentMinutes >= 720 && currentMinutes < 810) {
+        statusText = "Fechado para almoço • Reabre às 13:30";
+      } else if (currentMinutes >= 810 && currentMinutes < 1160) {
+        isOpen = true;
+        statusText = "Aberto agora • Atendimento até 19:20";
+      } else {
+        // Após 19:20
+        statusText = (day === 5)
+          ? "Fechado agora • Abre amanhã às 08:00"
+          : "Fechado agora • Abre amanhã às 08:30";
+      }
+    } else if (day === 6) {
+      // Sábado: 08:00 às 12:00 (480 min a 720 min)
+      if (currentMinutes < 480) {
+        statusText = "Fechado agora • Abre hoje às 08:00";
+      } else if (currentMinutes >= 480 && currentMinutes < 720) {
+        isOpen = true;
+        statusText = "Aberto agora • Atendimento até 12:00";
+      } else {
+        statusText = "Fechado agora • Abre segunda às 08:30";
+      }
     } else {
-      statusText = "Fechado agora • Abre amanhã às 08:00";
+      // Domingo
+      statusText = "Fechado aos domingos • Abre segunda às 08:30";
     }
-  } else if (day === 6) {
-    // Sábado: 08h às 13h
-    if (timeVal >= 8 && timeVal < 13) {
-      isOpen = true;
-      statusText = "Aberto agora • Atendimento até 13:00";
-    } else {
-      statusText = "Fechado agora • Abre segunda às 08:00";
+
+    const dot = statusEl.querySelector('.live-dot');
+    const text = statusEl.querySelector('.live-status-text');
+
+    if (text) text.textContent = statusText;
+    if (dot) {
+      dot.style.background = isOpen ? '#22C55E' : '#94A3B8';
+      dot.style.boxShadow = isOpen ? '0 0 0 3px rgba(34, 197, 94, 0.25)' : 'none';
     }
-  } else {
-    // Domingo
-    statusText = "Fechado aos domingos • Abre segunda às 08:00";
   }
 
-  const dot = statusEl.querySelector('.live-dot');
-  const text = statusEl.querySelector('.live-status-text');
-
-  if (text) text.textContent = statusText;
-  if (dot) {
-    dot.style.background = isOpen ? '#22C55E' : '#94A3B8';
-    dot.style.boxShadow = isOpen ? '0 0 0 3px rgba(34, 197, 94, 0.25)' : 'none';
-  }
+  updateStatus();
+  setInterval(updateStatus, 60000);
 }
 
 /* ==========================================================================

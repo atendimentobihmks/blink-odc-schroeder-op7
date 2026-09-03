@@ -665,8 +665,10 @@ body::before {
 .hours-row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 0.76rem;
   color: var(--text-muted);
+  gap: 8px;
 }
 
 .hours-row.closed {
@@ -676,11 +678,13 @@ body::before {
 
 .hours-day {
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .hours-time {
   font-weight: 700;
   color: var(--text-main);
+  text-align: right;
 }
 
 .hours-row.closed .hours-time {
